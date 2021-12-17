@@ -1,9 +1,6 @@
 #!usr/bin/env python
 """day 02 of advent of code 2021"""
-from itertools import pairwise
-from os import defpath
 from pathlib import Path
-from typing import Iterable, Iterator
 
 from aoc_utils import get_lines
 

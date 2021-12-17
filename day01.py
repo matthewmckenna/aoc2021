@@ -14,7 +14,7 @@ def main():
     print(f'part2: {part_two(filepath)}')
 
 
-def part_two(filepath: str):
+def part_two(filepath: Path) -> int:
     """return solution to part 2"""
     depths = text_to_ints(filepath)
     sums = (sum(v) for v in triplewise(depths))
@@ -30,13 +30,14 @@ def triplewise(iterable: Iterable) -> Iterator[tuple[int]]:
 
 
 def count_next_greater_than_last(iterable: Iterable) -> int:
+    """return the count of items where the next item is greater than the previous"""
     return sum(second > first for first, second in pairwise(iterable))
 
 
-def part_one(filepath: Path):
+def part_one(filepath: Path) -> int:
     """return solution to part 1"""
     depths = text_to_ints(filepath)
-    
+
     return count_next_greater_than_last(depths)
 
 
