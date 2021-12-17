@@ -8,3 +8,10 @@ def text_to_ints(filepath: Path) -> Iterator[int]:
     with open(filepath, 'rt') as f:
         for line in f:
             yield int(line.rstrip())
+
+
+def get_lines(filepath: Path) -> Iterator[str]:
+    """read a file and yield a generator of stripped lines"""
+    with open(filepath, 'rt') as f:
+        for line in f:
+            yield line.rstrip()
